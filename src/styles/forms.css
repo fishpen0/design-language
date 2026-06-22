@@ -1,0 +1,23 @@
+/* ============================================================ FORMS (readable labels) */
+.ao-field{margin-bottom:18px}
+.ao-field label{display:block;font-family:var(--font-body);font-weight:600;font-size:14px;color:var(--text);margin-bottom:6px}
+.ao-input,.ao-select,textarea.ao-input{width:100%;font-family:var(--font-body);font-size:15px;padding:12px 14px;
+  border:3px solid var(--border);border-radius:var(--r-soft);background:var(--surface);color:var(--text);
+  transition:border-color var(--t-fast),box-shadow var(--t-fast)}
+.ao-input::placeholder{color:var(--text-muted)}
+.ao-input:focus,.ao-select:focus,textarea.ao-input:focus{outline:3px solid var(--focus);outline-offset:2px;border-color:var(--primary)}
+.ao-input--err{border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(226,85,44,.3)}
+.ao-help{font-size:12px;color:var(--text-muted);margin-top:5px}
+.ao-help--err{color:var(--terracotta);font-weight:600}
+
+.ao-toggle{position:relative;width:64px;height:36px;display:inline-block}
+.ao-toggle input{opacity:0;width:0;height:0}
+.ao-toggle .track{position:absolute;inset:0;background:var(--surface-2);border:3px solid var(--border);border-radius:var(--r-pill);transition:background var(--t)}
+.ao-toggle .knob{position:absolute;height:24px;width:24px;left:3px;top:3px;background:#fff;border:2px solid var(--c-ink);border-radius:50%;transition:transform var(--t) var(--ease-pop)}
+.ao-toggle input:checked + .track{background:var(--chartreuse)}
+.ao-toggle input:checked + .track .knob{transform:translateX(28px)}
+.ao-toggle input:focus-visible + .track{outline:3px solid var(--focus);outline-offset:2px}
+
+.ao-tabs{display:inline-flex;background:var(--c-night);border:3px solid var(--border);border-radius:var(--r-pill);padding:4px;gap:4px}
+.ao-tabs button{font-family:var(--font-mono);font-size:12px;letter-spacing:1px;text-transform:uppercase;border:none;background:transparent;color:var(--c-sand);padding:9px 18px;min-height:40px;border-radius:var(--r-pill);cursor:pointer;transition:background var(--t-fast)}
+.ao-tabs button.on{background:var(--aqua-bright);color:var(--on-bright);font-weight:700}

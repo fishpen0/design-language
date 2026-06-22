@@ -1,0 +1,80 @@
+/* ---- CONSTANT BRAND HUES (do not change per theme) ---- */
+:root{
+  --aqua:#1FB9B0; --aqua-bright:#2EE6CE; --aqua-deep:#0E5C5A;
+  --flamingo:#FF4F9A; --coral:#FF6B5A; --terracotta:#E2552C;
+  --amber:#FFB23E; --chartreuse:#C9E84B;
+  --c-ink:#17223B; --c-sand:#F6ECD8; --c-night:#0C1430; --c-night2:#15203F;
+
+  /* text color that sits ON a fill (chosen for >=4.5:1) */
+  --on-bright:#17223B;   /* use on aqua, flamingo, lime, amber, coral */
+  --on-dark:#FFFFFF;     /* use on terracotta, aqua-deep, ink, night  */
+
+  /* ---- TYPE ---- */
+  --font-neon:'Monoton',cursive;
+  --font-display:'Righteous',sans-serif;
+  --font-script:'Pacifico',cursive;
+  --font-body:'Poppins',sans-serif;
+  --font-mono:'Space Mono',monospace;
+
+  /* ---- SPACING SCALE (4pt) ---- */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px;
+
+  /* ---- GEOMETRY ---- */
+  --r-sharp:2px; --r-soft:10px; --r-card:18px; --r-pill:999px; --angle:18px;
+
+  /* ---- Z-INDEX SCALE ---- */
+  --z-base:0; --z-raised:10; --z-sticky:50; --z-overlay:100; --z-modal:1000; --z-toast:1100;
+
+  /* ---- MOTION ---- */
+  --ease-pop:cubic-bezier(.34,1.56,.64,1);
+  --t-fast:.15s; --t:.28s;
+
+  --breeze-tile:54px;
+}
+
+/* ---- SEMANTIC TOKENS: LIGHT (default) ---- */
+:root, :root[data-theme="light"]{
+  --bg:var(--c-sand);
+  --surface:#FFFFFF;
+  --surface-2:#F1E7D1;
+  --text:var(--c-ink);
+  --text-muted:#46506B;
+  --border:var(--c-ink);
+  --shadow-col:var(--c-ink);
+  --primary:var(--aqua);
+  --accent:var(--flamingo);
+  --link:var(--aqua-deep);
+  --focus:var(--c-ink);
+  --kicker:var(--terracotta);
+  --breeze-back:var(--aqua-deep);
+  --breeze-block:var(--terracotta);
+  --hero-grad1:var(--c-night); --hero-grad2:var(--aqua-deep); --hero-grad3:var(--terracotta);
+}
+/* ---- SEMANTIC TOKENS: DARK ---- */
+:root[data-theme="dark"]{
+  --bg:var(--c-night);
+  --surface:var(--c-night2);
+  --surface-2:#1D2A4F;
+  --text:var(--c-sand);
+  --text-muted:#AEB7CE;
+  --border:#EFE3C6;            /* warm enamel outline at night */
+  --shadow-col:#04030A;
+  --primary:var(--aqua-bright);
+  --accent:var(--flamingo);
+  --link:var(--aqua-bright);
+  --focus:var(--aqua-bright);
+  --kicker:var(--amber);
+  --breeze-back:var(--c-night);
+  --breeze-block:var(--aqua);
+  --hero-grad1:#05060F; --hero-grad2:var(--aqua-deep); --hero-grad3:#7A2A16;
+}
+/* Auto dark when the user hasn't explicitly chosen light */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:var(--c-night); --surface:var(--c-night2); --surface-2:#1D2A4F;
+    --text:var(--c-sand); --text-muted:#AEB7CE; --border:#EFE3C6; --shadow-col:#04030A;
+    --primary:var(--aqua-bright); --link:var(--aqua-bright); --focus:var(--aqua-bright);
+    --kicker:var(--amber); --breeze-back:var(--c-night); --breeze-block:var(--aqua);
+    --hero-grad2:var(--aqua-deep); --hero-grad3:#7a2a16;
+  }
+}

@@ -57,3 +57,81 @@ v2 is the result of an adversarial review pass on v1. Changes:
 ## Still to build for a full production system
 
 Data-viz color ramp (colorblind-safe), tables, modals, tooltips, menus/dropdowns, and empty/loading/skeleton states.
+
+## Using as a package
+
+### Install (git dependency)
+
+```json
+// package.json
+{
+  "dependencies": {
+    "@atomic-oasis/core": "github:fishpen0/design-language"
+  }
+}
+```
+
+Or locally:
+
+```bash
+npm install ../path/to/design-language
+```
+
+### Usage
+
+```js
+// Register all components and import styles
+import '@atomic-oasis/core';
+import '@atomic-oasis/core/styles.css';
+```
+
+```html
+<ao-button variant="accent">Book now</ao-button>
+<ao-badge tone="lime">New</ao-badge>
+<ao-alert tone="success" heading="Done">Your booking is confirmed.</ao-alert>
+<ao-input label="Email" placeholder="you@example.com"></ao-input>
+<ao-toggle checked label="Notifications"></ao-toggle>
+<ao-tabs .tabs='["Day","Week","Month"]'></ao-tabs>
+<ao-breeze unit="oculus" style="height:200px"></ao-breeze>
+```
+
+### Theme
+
+```js
+import { initTheme, toggleTheme, setTheme } from '@atomic-oasis/core/theme';
+
+// Call once on app load — reads localStorage + OS preference
+initTheme();
+
+// Toggle or set explicitly
+toggleTheme();
+setTheme('dark');
+```
+
+Theme is controlled by `data-theme="light|dark"` on `<html>`. All tokens flip automatically.
+
+### Tokens only
+
+```css
+@import '@atomic-oasis/core/tokens.css';
+```
+
+### Available components
+
+| Element | Key props |
+|---|---|
+| `<ao-button>` | `variant` (primary/accent/lime/amber/deep/danger/outline/ghost), `size` (sm/md/lg), `disabled` |
+| `<ao-badge>` | `tone` (aqua/pink/lime/amber/ghost) |
+| `<ao-alert>` | `tone` (success/info/warning/danger), `heading` |
+| `<ao-input>` | `label`, `placeholder`, `value`, `help`, `error`, `type` |
+| `<ao-select>` | `label`, `value`, `help`, `error` (options via `<slot>`) |
+| `<ao-textarea>` | `label`, `placeholder`, `value`, `rows`, `help`, `error` |
+| `<ao-toggle>` | `checked`, `label` |
+| `<ao-tabs>` | `.tabs` (string[]), `active` (index) — emits `ao-tab-change` |
+| `<ao-panel>` | `flat` |
+| `<ao-stat>` | `value`, `label` |
+| `<ao-breeze>` | `unit` (oculus/quatrefoil/vista/diamond) |
+
+### Design-sync (planned)
+
+Per-component preview cards with `@dsCard` markers and the `/design-sync` upload layer are planned for a follow-up. The current structure (single `styles.css`, prefixed classes, `dev/index.html` playground) is built to feed this directly.

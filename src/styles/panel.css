@@ -1,0 +1,5 @@
+/* ============================================================ PATTERN CARDS */
+.ao-stat{background:var(--c-night2);color:var(--c-sand);border:3px solid var(--aqua);border-radius:var(--r-card);
+  padding:22px;text-align:center;box-shadow:6px 6px 0 var(--shadow-col)}
+.ao-stat .n{font-family:var(--font-neon);font-size:40px;color:var(--aqua-bright);text-shadow:2px 2px 0 var(--flamingo)}
+.ao-stat .l{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--amber)}

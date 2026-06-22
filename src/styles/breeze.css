@@ -1,0 +1,6 @@
+/* ============================================================ BREEZE BLOCKS */
+.ao-breeze{position:relative;border:3px solid var(--border);border-radius:var(--r-soft);overflow:hidden;
+  color:var(--breeze-block);background:var(--breeze-back)}
+.ao-breeze-fill{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ao-breeze--unit{height:150px}
+.ao-breeze-label{font-family:var(--font-mono);font-size:12px;letter-spacing:1px;margin-top:8px;color:var(--text-muted)}

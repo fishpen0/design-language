@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atomic Oasis — Dev Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Righteous&family=Pacifico&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module">
+    import '../src/index.ts';
+    import { initTheme, toggleTheme } from '../src/theme/theme.ts';
+    initTheme();
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      const t = toggleTheme();
+      document.getElementById('themeBtn').textContent = t === 'dark' ? '☀ Light' : '☾ Dark';
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg, #F6ECD8);
+      color: var(--text, #17223B);
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-family: 'Righteous', sans-serif;
+      margin: 40px 0 12px;
+      border-bottom: 3px solid var(--flamingo, #FF4F9A);
+      padding-bottom: 6px;
+    }
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <button id="themeBtn" style="position:fixed;top:12px;right:12px;font-family:'Space Mono',monospace;font-size:12px;cursor:pointer;padding:8px 14px;border-radius:999px;background:#2EE6CE;border:2px solid #17223B;font-weight:700">☾ Dark</button>
+
+  <h1 style="font-family:'Monoton',cursive;color:#2EE6CE;text-shadow:3px 3px 0 #FF4F9A">ATOMIC OASIS</h1>
+  <p>Dev playground — every component rendered. Use the theme button to verify token switching.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <ao-button>Primary</ao-button>
+    <ao-button variant="accent">Accent</ao-button>
+    <ao-button variant="lime">Lime</ao-button>
+    <ao-button variant="amber">Amber</ao-button>
+    <ao-button variant="deep">Deep</ao-button>
+    <ao-button variant="danger">Danger</ao-button>
+    <ao-button variant="outline">Outline</ao-button>
+    <ao-button variant="ghost">Ghost</ao-button>
+    <ao-button disabled>Disabled</ao-button>
+  </div>
+  <div class="row">
+    <ao-button size="sm">Small</ao-button>
+    <ao-button>Medium</ao-button>
+    <ao-button size="lg">Large</ao-button>
+  </div>
+
+  <h2>Badges</h2>
+  <div class="row">
+    <ao-badge tone="aqua">● Online</ao-badge>
+    <ao-badge tone="pink">New</ao-badge>
+    <ao-badge tone="lime">Featured</ao-badge>
+    <ao-badge tone="amber">Beta</ao-badge>
+    <ao-badge tone="ghost">Archived</ao-badge>
+  </div>
+
+  <h2>Alerts</h2>
+  <div style="display:grid;gap:12px;margin-bottom:16px">
+    <ao-alert tone="success" heading="Liftoff successful">Your reservation is confirmed for two at the lagoon.</ao-alert>
+    <ao-alert tone="info" heading="Did you know?">Toggle the theme — every token flips.</ao-alert>
+    <ao-alert tone="warning" heading="Heads up">Your session expires in five minutes.</ao-alert>
+    <ao-alert tone="danger" heading="Payment failed">We couldn't process that card. Try another.</ao-alert>
+  </div>
+
+  <h2>Forms</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div>
+      <ao-input label="Destination" placeholder="Where to, traveler?" help="Helper text in the body font."></ao-input>
+      <ao-input label="Email" value="not-an-email" error="That doesn't look like an email address."></ao-input>
+      <ao-select label="Select a vibe">
+        <option>Poolside lounge</option>
+        <option>Desert sunset</option>
+        <option>Mid-century lanai</option>
+      </ao-select>
+      <ao-textarea label="Notes" placeholder="Leave a note on the lanai…" rows="3"></ao-textarea>
+    </div>
+    <div>
+      <p style="font-weight:600;font-size:14px">Toggles</p>
+      <div class="row">
+        <ao-toggle checked label="Setting one"></ao-toggle>
+        <ao-toggle label="Setting two"></ao-toggle>
+      </div>
+      <p style="font-weight:600;font-size:14px;margin-top:24px">Segmented Tabs</p>
+      <ao-tabs .tabs='["Day","Week","Month"]'></ao-tabs>
+    </div>
+  </div>
+
+  <h2>Panels &amp; Stats</h2>
+  <ao-panel style="margin-bottom:16px">
+    <p>This is a standard panel with a hard-shadow border.</p>
+  </ao-panel>
+  <ao-panel flat style="margin-bottom:16px">
+    <p>This is a flat panel (no box shadow).</p>
+  </ao-panel>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px">
+    <ao-stat value="62" label="Sunny Days"></ao-stat>
+    <ao-stat value="9.6" label="Guest Rating"></ao-stat>
+    <ao-stat value="340" label="Cocktails"></ao-stat>
+    <ao-stat value="∞" label="Good Vibes"></ao-stat>
+  </div>
+
+  <h2>Breeze Screens</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px">
+    <div><ao-breeze unit="oculus" style="height:150px;display:block"></ao-breeze><p style="font-family:'Space Mono',monospace;font-size:12px;margin-top:6px">Oculus</p></div>
+    <div><ao-breeze unit="quatrefoil" style="height:150px;display:block"></ao-breeze><p style="font-family:'Space Mono',monospace;font-size:12px;margin-top:6px">Quatrefoil</p></div>
+    <div><ao-breeze unit="vista" style="height:150px;display:block"></ao-breeze><p style="font-family:'Space Mono',monospace;font-size:12px;margin-top:6px">Vista</p></div>
+    <div><ao-breeze unit="diamond" style="height:150px;display:block"></ao-breeze><p style="font-family:'Space Mono',monospace;font-size:12px;margin-top:6px">Diamond</p></div>
+  </div>
+
+</body>
+</html>

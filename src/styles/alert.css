@@ -1,0 +1,10 @@
+/* ============================================================ ALERTS */
+.ao-alert{border:3px solid var(--border);border-radius:var(--r-soft);padding:16px 18px;display:flex;gap:14px;
+  align-items:flex-start;box-shadow:4px 4px 0 var(--shadow-col);background:var(--surface)}
+.ao-alert .ic{font-size:20px;line-height:1;font-weight:700}
+.ao-alert .at{font-family:var(--font-display);font-size:15px;margin:0 0 2px;color:var(--text)}
+.ao-alert .ab{font-size:13.5px;color:var(--text-muted);margin:0}
+.ao-alert--success{border-left:12px solid #2BA84A}
+.ao-alert--warning{border-left:12px solid var(--amber)}
+.ao-alert--danger{border-left:12px solid var(--terracotta)}
+.ao-alert--info{border-left:12px solid var(--aqua)}
