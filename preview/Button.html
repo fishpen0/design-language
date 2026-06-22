@@ -1,0 +1,111 @@
+<!-- @dsCard group="Components" name="Button" subtitle="primary · accent · lime · amber · deep · danger · outline · ghost" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button — Atomic Oasis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Righteous&family=Pacifico&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../dist/style.css">
+<script type="module">
+  import '../dist/index.js';
+  import { initTheme } from '../dist/theme.js';
+  initTheme();
+</script>
+<style>
+  body { padding: 24px; background: var(--bg); color: var(--text); font-family: var(--font-body); margin: 0; }
+  .stack { display: flex; flex-direction: column; gap: 24px; }
+  .group { display: flex; flex-direction: column; gap: 12px; }
+  .label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+</style>
+</head>
+<body>
+
+<div class="stack">
+  <div class="group">
+    <div class="label">Primary (default)</div>
+    <div class="row">
+      <ao-button size="sm">Small</ao-button>
+      <ao-button size="md">Medium</ao-button>
+      <ao-button size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Accent</div>
+    <div class="row">
+      <ao-button variant="accent" size="sm">Small</ao-button>
+      <ao-button variant="accent" size="md">Medium</ao-button>
+      <ao-button variant="accent" size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Lime</div>
+    <div class="row">
+      <ao-button variant="lime" size="sm">Small</ao-button>
+      <ao-button variant="lime" size="md">Medium</ao-button>
+      <ao-button variant="lime" size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Amber</div>
+    <div class="row">
+      <ao-button variant="amber" size="sm">Small</ao-button>
+      <ao-button variant="amber" size="md">Medium</ao-button>
+      <ao-button variant="amber" size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Deep</div>
+    <div class="row">
+      <ao-button variant="deep" size="sm">Small</ao-button>
+      <ao-button variant="deep" size="md">Medium</ao-button>
+      <ao-button variant="deep" size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Danger</div>
+    <div class="row">
+      <ao-button variant="danger" size="sm">Small</ao-button>
+      <ao-button variant="danger" size="md">Medium</ao-button>
+      <ao-button variant="danger" size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Outline</div>
+    <div class="row">
+      <ao-button variant="outline" size="sm">Small</ao-button>
+      <ao-button variant="outline" size="md">Medium</ao-button>
+      <ao-button variant="outline" size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Ghost</div>
+    <div class="row">
+      <ao-button variant="ghost" size="sm">Small</ao-button>
+      <ao-button variant="ghost" size="md">Medium</ao-button>
+      <ao-button variant="ghost" size="lg">Large</ao-button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Disabled</div>
+    <div class="row">
+      <ao-button disabled>Primary</ao-button>
+      <ao-button variant="accent" disabled>Accent</ao-button>
+      <ao-button variant="outline" disabled>Outline</ao-button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

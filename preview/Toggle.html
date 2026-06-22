@@ -1,0 +1,38 @@
+<!-- @dsCard group="Forms" name="Toggle" subtitle="checked · unchecked" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggle — Atomic Oasis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Righteous&family=Pacifico&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../dist/style.css">
+<script type="module">
+  import '../dist/index.js';
+  import { initTheme } from '../dist/theme.js';
+  initTheme();
+</script>
+<style>
+  body { padding: 24px; background: var(--bg); color: var(--text); font-family: var(--font-body); margin: 0; }
+  .row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .pair { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .pair-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="pair">
+    <ao-toggle checked label="Notifications on"></ao-toggle>
+    <span class="pair-label">On</span>
+  </div>
+  <div class="pair">
+    <ao-toggle label="Notifications off"></ao-toggle>
+    <span class="pair-label">Off</span>
+  </div>
+</div>
+
+</body>
+</html>

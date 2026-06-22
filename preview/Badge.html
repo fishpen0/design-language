@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" name="Badge" subtitle="5 tones" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Badge — Atomic Oasis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Righteous&family=Pacifico&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../dist/style.css">
+<script type="module">
+  import '../dist/index.js';
+  import { initTheme } from '../dist/theme.js';
+  initTheme();
+</script>
+<style>
+  body { padding: 24px; background: var(--bg); color: var(--text); font-family: var(--font-body); margin: 0; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+</style>
+</head>
+<body>
+
+<div class="row">
+  <ao-badge tone="aqua">● Online</ao-badge>
+  <ao-badge tone="pink">New</ao-badge>
+  <ao-badge tone="lime">Featured</ao-badge>
+  <ao-badge tone="amber">Beta</ao-badge>
+  <ao-badge tone="ghost">Archived</ao-badge>
+</div>
+
+</body>
+</html>

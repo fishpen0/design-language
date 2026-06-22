@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" name="Stat" subtitle="Monoton numerals · 4-up grid" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stat — Atomic Oasis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Righteous&family=Pacifico&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../dist/style.css">
+<script type="module">
+  import '../dist/index.js';
+  import { initTheme } from '../dist/theme.js';
+  initTheme();
+</script>
+<style>
+  body { padding: 24px; background: var(--bg); color: var(--text); font-family: var(--font-body); margin: 0; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+</style>
+</head>
+<body>
+
+<div class="grid">
+  <ao-stat value="62" label="Sunny Days"></ao-stat>
+  <ao-stat value="9.6" label="Guest Rating"></ao-stat>
+  <ao-stat value="340" label="Cocktails"></ao-stat>
+  <ao-stat value="∞" label="Good Vibes"></ao-stat>
+</div>
+
+</body>
+</html>
